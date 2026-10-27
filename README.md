@@ -1,3 +1,5 @@
+<!-- This README is maintained by Docturnal. Your additions and deletions are kept. -->
+
 <a href="https://excalidraw.com/" target="_blank" rel="noopener">
   <picture>
     <source media="(prefers-color-scheme: dark)" alt="Excalidraw" srcset="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github/excalidraw_github_cover_2_dark.png" />
@@ -68,6 +70,20 @@ The Excalidraw editor (npm package) supports:
 - 🔙&nbsp;Undo / Redo.
 - 🔍&nbsp;Zoom and panning support.
 
+## Architecture
+
+The layers in the project are as follows:
+
+<!-- docturnal:layers -->
+| Layer | Description |
+| --- | --- |
+| [Project Configuration](docs/project-configuration.md) | Manages project-wide settings and configurations. |
+| [Application Core](docs/application-core.md) | Contains the main application logic and components. |
+| [Utility Functions](docs/utility-functions.md) | Exports various icons, provides utility functions for testing, and exports API functions and imports necessary modules. |
+| [Packages App Tests](docs/packages-app-tests.md) | Defines various types and interfaces used in Excalidraw, exports language, translation keys, and internationalization functions, and exports Excalidraw API provider and Excalidraw component. |
+| [Build and Release Scripts](docs/build-and-release-scripts.md) | Handles the build, packaging, and release processes. |
+<!-- /docturnal:layers -->
+
 ## Excalidraw.com
 
 The app hosted at [excalidraw.com](https://excalidraw.com) is a minimal showcase of what you can build with Excalidraw. Its [source code](https://github.com/excalidraw/excalidraw/tree/master/excalidraw-app) is part of this repository as well, and the app features:
@@ -93,6 +109,140 @@ yarn add react react-dom @excalidraw/excalidraw
 ```
 
 Check out our [documentation](https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation) for more details!
+
+### Available scripts
+
+<!-- docturnal:scripts -->
+| Command | Runs |
+| --- | --- |
+| `yarn build-node` | `node ./scripts/build-node.js` |
+| `yarn build:app:docker` | `yarn --cwd ./excalidraw-app build:app:docker` |
+| `yarn build:app` | `yarn --cwd ./excalidraw-app build:app` |
+| `yarn build:common` | `yarn --cwd ./packages/common build:esm` |
+| `yarn build:element` | `yarn --cwd ./packages/element build:esm` |
+| `yarn build:excalidraw` | `yarn --cwd ./packages/excalidraw build:esm` |
+| `yarn build:math` | `yarn --cwd ./packages/math build:esm` |
+| `yarn build:fractional-indexing` | `yarn --cwd ./packages/fractional-indexing build:esm` |
+| `yarn build:laser-pointer` | `yarn --cwd ./packages/laser-pointer build:esm` |
+| `yarn build:packages` | `yarn build:common && yarn build:fractional-indexing && yarn build:laser-pointer && yarn build:math && yarn build:element && yarn build:excalidraw` |
+| `yarn build:version` | `yarn --cwd ./excalidraw-app build:version` |
+| `yarn build` | `yarn --cwd ./excalidraw-app build` |
+| `yarn build:preview` | `yarn --cwd ./excalidraw-app build:preview` |
+| `yarn start` | `yarn --cwd ./excalidraw-app start` |
+| `yarn start:production` | `yarn --cwd ./excalidraw-app start:production` |
+| `yarn start:example` | `yarn build:packages && yarn --cwd ./examples/with-script-in-browser start` |
+| `yarn test:all` | `yarn test:typecheck && yarn test:code && yarn test:other && yarn test:app --watch=false` |
+| `yarn test:app` | `vitest` |
+| `yarn test:code` | `eslint --max-warnings=0 --ext .js,.ts,.tsx .` |
+| `yarn test:other` | `yarn prettier --list-different` |
+| `yarn test:typecheck` | `tsc` |
+| `yarn test:update` | `yarn test:app --update --watch=false` |
+| `yarn test` | `yarn test:app` |
+| `yarn test:coverage` | `vitest --coverage` |
+| `yarn test:coverage:watch` | `vitest --coverage --watch` |
+| `yarn test:ui` | `yarn test --ui --coverage.enabled=true` |
+| `yarn fix:code` | `yarn test:code --fix` |
+| `yarn fix:other` | `yarn prettier --write` |
+| `yarn fix` | `yarn fix:other && yarn fix:code` |
+| `yarn locales-coverage` | `node scripts/build-locales-coverage.js` |
+| `yarn locales-coverage:description` | `node scripts/locales-coverage-description.js` |
+| `yarn prepare` | `husky install` |
+| `yarn prettier` | `prettier "**/*.{css,scss,json,md,html,yml}" --ignore-path=.eslintignore` |
+| `yarn release` | `node scripts/release.js` |
+| `yarn release:test` | `node scripts/release.js --tag=test` |
+| `yarn release:next` | `node scripts/release.js --tag=next` |
+| `yarn release:latest` | `node scripts/release.js --tag=latest` |
+| `yarn rm:build` | `rimraf --glob excalidraw-app/build excalidraw-app/dist excalidraw-app/dev-dist packages/*/dist packages/*/build examples/*/build examples/*/dist` |
+| `yarn rm:node_modules` | `rimraf --glob node_modules excalidraw-app/node_modules packages/*/node_modules` |
+| `yarn clean-install` | `yarn rm:node_modules && yarn install` |
+<!-- /docturnal:scripts -->
+
+## Project structure
+
+<!-- docturnal:tree -->
+```text
+.
+├── dev-docs/
+│   ├── docs/
+│   │   ├── @excalidraw/
+│   │   ├── assets/
+│   │   ├── codebase/
+│   │   └── introduction/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── css/
+│   │   ├── pages/
+│   │   └── theme/
+│   └── static/
+│       └── img/
+├── examples/
+│   ├── with-nextjs/
+│   │   ├── public/
+│   │   └── src/
+│   └── with-script-in-browser/
+│       ├── components/
+│       └── public/
+├── excalidraw-app/
+│   ├── app-language/
+│   ├── collab/
+│   ├── components/
+│   ├── data/
+│   ├── share/
+│   └── tests/
+│       └── __snapshots__/
+├── firebase-project/
+├── packages/
+│   ├── common/
+│   │   ├── src/
+│   │   └── tests/
+│   ├── element/
+│   │   ├── src/
+│   │   └── tests/
+│   ├── excalidraw/
+│   │   ├── actions/
+│   │   ├── charts/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── css/
+│   │   ├── data/
+│   │   ├── eraser/
+│   │   ├── fonts/
+│   │   ├── hooks/
+│   │   ├── lasso/
+│   │   ├── locales/
+│   │   ├── renderer/
+│   │   ├── scene/
+│   │   ├── subset/
+│   │   ├── tests/
+│   │   └── wysiwyg/
+│   ├── fractional-indexing/
+│   │   └── src/
+│   ├── laser-pointer/
+│   │   └── src/
+│   ├── math/
+│   │   ├── src/
+│   │   └── tests/
+│   └── utils/
+│       ├── src/
+│       └── tests/
+├── public/
+│   └── screenshots/
+├── scripts/
+│   ├── wasm/
+│   └── woff2/
+│       └── assets/
+├── .dockerignore
+├── .editorconfig
+├── .env.development
+├── .env.production
+├── .env.test
+├── .eslintignore
+├── .eslintrc.json
+├── .gitattributes
+├── .gitignore
+└── ...
+```
+<!-- /docturnal:tree -->
 
 ## Contributing
 

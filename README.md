@@ -1,3 +1,5 @@
+<!-- This README is maintained by Docturnal. Your additions and deletions are kept. -->
+
 <a href="https://excalidraw.com/" target="_blank" rel="noopener">
   <picture>
     <source media="(prefers-color-scheme: dark)" alt="Excalidraw" srcset="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github/excalidraw_github_cover_2_dark.png" />
@@ -68,6 +70,23 @@ The Excalidraw editor (npm package) supports:
 - 🔙&nbsp;Undo / Redo.
 - 🔍&nbsp;Zoom and panning support.
 
+## Architecture
+
+The layers in excalidraw-monorepo work together to provide a comprehensive development environment. Here's a brief overview of each layer:
+
+<!-- docturnal:layers -->
+| Part | Description | Details |
+| --- | --- | --- |
+| [Top Level](docs/top-level.md) | Manages linting and tests for the project. |  |
+| [Docs](docs/docs.md) | This folder contains configuration files for the project's documentation, including presets for Babel, configuration for Docusaurus, and sidebar settings. |  |
+| [With Nextjs](docs/with-nextjs.md) | Configures Next.js for the project. |  |
+| [With Script in Browser](docs/with-script-in-browser.md) | This folder contains example files for a web application using React and Excalidraw, including components and utilities. |  |
+| [Excalidraw App](docs/excalidraw-app.md) | This folder contains the main application files for the Excalidraw project, including the main entry point, custom stats, iframe export, Jotai store, constants, bug issue template, collaboration debug, and Sentry configuration. | [Components](docs/excalidraw-app/components.md), [Data](docs/excalidraw-app/data.md), [Tests](docs/excalidraw-app/tests.md) |
+| [Packages](docs/packages.md) | This folder contains various utility and helper functions used throughout the Excalidraw application, including analytics tracking, drawing trails, clipboard operations, and more. | [Excalidraw Common](docs/packages/excalidraw-common.md), [Excalidraw Common Tests](docs/packages/excalidraw-common-tests.md), [Excalidraw Element](docs/packages/excalidraw-element.md), [Excalidraw Element Tests](docs/packages/excalidraw-element-tests.md), [Excalidraw](docs/packages/excalidraw.md), [Excalidraw Tests](docs/packages/excalidraw-tests.md), [Excalidraw Fractional Indexing](docs/packages/excalidraw-fractional-indexing.md), [Excalidraw Laser Pointer](docs/packages/excalidraw-laser-pointer.md), [Excalidraw Math](docs/packages/excalidraw-math.md), [Excalidraw Math Tests](docs/packages/excalidraw-math-tests.md), [Excalidraw Utilities](docs/packages/excalidraw-utilities.md), [Excalidraw Utilities Tests](docs/packages/excalidraw-utilities-tests.md) |
+| [Public](docs/public.md) | Manages the service worker for the public directory. |  |
+| [Scripts](docs/scripts.md) | This folder contains scripts used for building, packaging, and releasing the software project. |  |
+<!-- /docturnal:layers -->
+
 ## Excalidraw.com
 
 The app hosted at [excalidraw.com](https://excalidraw.com) is a minimal showcase of what you can build with Excalidraw. Its [source code](https://github.com/excalidraw/excalidraw/tree/master/excalidraw-app) is part of this repository as well, and the app features:
@@ -93,6 +112,140 @@ yarn add react react-dom @excalidraw/excalidraw
 ```
 
 Check out our [documentation](https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation) for more details!
+
+### Available scripts
+
+<!-- docturnal:scripts -->
+| Command | Runs |
+| --- | --- |
+| `yarn build-node` | `node ./scripts/build-node.js` |
+| `yarn build:app:docker` | `yarn --cwd ./excalidraw-app build:app:docker` |
+| `yarn build:app` | `yarn --cwd ./excalidraw-app build:app` |
+| `yarn build:common` | `yarn --cwd ./packages/common build:esm` |
+| `yarn build:element` | `yarn --cwd ./packages/element build:esm` |
+| `yarn build:excalidraw` | `yarn --cwd ./packages/excalidraw build:esm` |
+| `yarn build:math` | `yarn --cwd ./packages/math build:esm` |
+| `yarn build:fractional-indexing` | `yarn --cwd ./packages/fractional-indexing build:esm` |
+| `yarn build:laser-pointer` | `yarn --cwd ./packages/laser-pointer build:esm` |
+| `yarn build:packages` | `yarn build:common && yarn build:fractional-indexing && yarn build:laser-pointer && yarn build:math && yarn build:element && yarn build:excalidraw` |
+| `yarn build:version` | `yarn --cwd ./excalidraw-app build:version` |
+| `yarn build` | `yarn --cwd ./excalidraw-app build` |
+| `yarn build:preview` | `yarn --cwd ./excalidraw-app build:preview` |
+| `yarn start` | `yarn --cwd ./excalidraw-app start` |
+| `yarn start:production` | `yarn --cwd ./excalidraw-app start:production` |
+| `yarn start:example` | `yarn build:packages && yarn --cwd ./examples/with-script-in-browser start` |
+| `yarn test:all` | `yarn test:typecheck && yarn test:code && yarn test:other && yarn test:app --watch=false` |
+| `yarn test:app` | `vitest` |
+| `yarn test:code` | `eslint --max-warnings=0 --ext .js,.ts,.tsx .` |
+| `yarn test:other` | `yarn prettier --list-different` |
+| `yarn test:typecheck` | `tsc` |
+| `yarn test:update` | `yarn test:app --update --watch=false` |
+| `yarn test` | `yarn test:app` |
+| `yarn test:coverage` | `vitest --coverage` |
+| `yarn test:coverage:watch` | `vitest --coverage --watch` |
+| `yarn test:ui` | `yarn test --ui --coverage.enabled=true` |
+| `yarn fix:code` | `yarn test:code --fix` |
+| `yarn fix:other` | `yarn prettier --write` |
+| `yarn fix` | `yarn fix:other && yarn fix:code` |
+| `yarn locales-coverage` | `node scripts/build-locales-coverage.js` |
+| `yarn locales-coverage:description` | `node scripts/locales-coverage-description.js` |
+| `yarn prepare` | `husky install` |
+| `yarn prettier` | `prettier "**/*.{css,scss,json,md,html,yml}" --ignore-path=.eslintignore` |
+| `yarn release` | `node scripts/release.js` |
+| `yarn release:test` | `node scripts/release.js --tag=test` |
+| `yarn release:next` | `node scripts/release.js --tag=next` |
+| `yarn release:latest` | `node scripts/release.js --tag=latest` |
+| `yarn rm:build` | `rimraf --glob excalidraw-app/build excalidraw-app/dist excalidraw-app/dev-dist packages/*/dist packages/*/build examples/*/build examples/*/dist` |
+| `yarn rm:node_modules` | `rimraf --glob node_modules excalidraw-app/node_modules packages/*/node_modules` |
+| `yarn clean-install` | `yarn rm:node_modules && yarn install` |
+<!-- /docturnal:scripts -->
+
+## Project structure
+
+<!-- docturnal:tree -->
+```text
+.
+├── dev-docs/
+│   ├── docs/
+│   │   ├── @excalidraw/
+│   │   ├── assets/
+│   │   ├── codebase/
+│   │   └── introduction/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── css/
+│   │   ├── pages/
+│   │   └── theme/
+│   └── static/
+│       └── img/
+├── examples/
+│   ├── with-nextjs/
+│   │   ├── public/
+│   │   └── src/
+│   └── with-script-in-browser/
+│       ├── components/
+│       └── public/
+├── excalidraw-app/
+│   ├── app-language/
+│   ├── collab/
+│   ├── components/
+│   ├── data/
+│   ├── share/
+│   └── tests/
+│       └── __snapshots__/
+├── firebase-project/
+├── packages/
+│   ├── common/
+│   │   ├── src/
+│   │   └── tests/
+│   ├── element/
+│   │   ├── src/
+│   │   └── tests/
+│   ├── excalidraw/
+│   │   ├── actions/
+│   │   ├── charts/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── css/
+│   │   ├── data/
+│   │   ├── eraser/
+│   │   ├── fonts/
+│   │   ├── hooks/
+│   │   ├── lasso/
+│   │   ├── locales/
+│   │   ├── renderer/
+│   │   ├── scene/
+│   │   ├── subset/
+│   │   ├── tests/
+│   │   └── wysiwyg/
+│   ├── fractional-indexing/
+│   │   └── src/
+│   ├── laser-pointer/
+│   │   └── src/
+│   ├── math/
+│   │   ├── src/
+│   │   └── tests/
+│   └── utils/
+│       ├── src/
+│       └── tests/
+├── public/
+│   └── screenshots/
+├── scripts/
+│   ├── wasm/
+│   └── woff2/
+│       └── assets/
+├── .dockerignore
+├── .editorconfig
+├── .env.development
+├── .env.production
+├── .env.test
+├── .eslintignore
+├── .eslintrc.json
+├── .gitattributes
+├── .gitignore
+└── ...
+```
+<!-- /docturnal:tree -->
 
 ## Contributing
 

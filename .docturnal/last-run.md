@@ -2,42 +2,40 @@
 
 ## Progress
 
-- **Documentation:** complete, with 23 layer documents and the README.
-- **Comments:** 0 of 788 files commented at the medium level.
+- **Documentation:** every file is read, and 23 layer documents and the README are written. 1 more document follows on the next run.
+- **Comments:** 1 of 788 files commented at the medium level.
 - **This pull request:** documentation for the whole project.
-- **Next:** comments on existing code in batches of up to 15 files, starting with batch 1 and the most important files. 788 existing files are left.
+- **Next:** comments on existing code in batches of up to 15 files, starting with batch 1 and the most important files. 787 existing files are left.
 
-The latest run updates 23 docs and updates the README. Review the changes, then merge the pull request to keep them.
+The latest run updates the README. Review the changes, then merge the pull request to keep them.
 
-## Docs
+## Comments added
 
-- Updated `docs/top-level.md`
-- Updated `docs/docs.md`
-- Updated `docs/with-nextjs.md`
-- Updated `docs/with-script-in-browser.md`
-- Updated `docs/excalidraw-app.md`
-- Updated `docs/packages.md`
-- Updated `docs/public.md`
-- Updated `docs/scripts.md`
-- Updated `docs/excalidraw-app/components.md`
-- Updated `docs/excalidraw-app/data.md`
-- Updated `docs/packages/excalidraw-common.md`
-- Updated `docs/packages/excalidraw-element.md`
-- Updated `docs/packages/excalidraw.md`
-- Updated `docs/packages/excalidraw-fractional-indexing.md`
-- Updated `docs/packages/excalidraw-laser-pointer.md`
-- Updated `docs/packages/excalidraw-math.md`
-- Updated `docs/packages/excalidraw-utilities.md`
-- Updated `docs/excalidraw-app/tests.md`
-- Updated `docs/packages/excalidraw-common-tests.md`
-- Updated `docs/packages/excalidraw-element-tests.md`
-- Updated `docs/packages/excalidraw-tests.md`
-- Updated `docs/packages/excalidraw-math-tests.md`
-- Updated `docs/packages/excalidraw-utilities-tests.md`
+| File | Comments added | Checked by a parser | Proposed comments |
+| --- | --- | --- | --- |
+| `packages/excalidraw/types.ts` | 0 | Yes (TypeScript) | proposed 0, 0 added |
 
 ## README
 
-- Updated: "Architecture", "Quick start", "Project structure"
+- Updated: "Project structure"
+
+## Left for the next run
+
+- `packages/excalidraw/index.tsx`: time budget
+- `packages/excalidraw/i18n.ts`: time budget
+- `packages/excalidraw/components/icons.tsx`: time budget
+- `packages/excalidraw/scene/index.ts`: time budget
+- `packages/excalidraw/actions/index.ts`: time budget
+- `packages/excalidraw/data/index.ts`: time budget
+- `packages/excalidraw/charts/index.ts`: time budget
+- `packages/excalidraw/components/ColorPicker/keyboardNavHandlers.ts`: time budget
+- `packages/excalidraw/components/Stats/index.tsx`: time budget
+- `packages/excalidraw/fonts/index.ts`: time budget
+- `packages/excalidraw/lasso/index.ts`: time budget
+- `packages/excalidraw/eraser/index.ts`: time budget
+- `packages/excalidraw/components/TTDDialog/Chat/index.ts`: time budget
+- `packages/excalidraw/components/FontPicker/keyboardNavHandlers.ts`: time budget
+- `docs/packages/excalidraw.md`: time budget, after the part documents
 
 ## Models
 

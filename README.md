@@ -178,6 +178,9 @@ Check out our [documentation](https://docs.excalidraw.com/docs/@excalidraw/excal
 │   │   └── theme/
 │   └── static/
 │       └── img/
+├── docs/
+│   ├── excalidraw-app/
+│   └── packages/
 ├── examples/
 │   ├── with-nextjs/
 │   │   ├── public/
@@ -240,9 +243,6 @@ Check out our [documentation](https://docs.excalidraw.com/docs/@excalidraw/excal
 ├── .env.production
 ├── .env.test
 ├── .eslintignore
-├── .eslintrc.json
-├── .gitattributes
-├── .gitignore
 └── ...
 ```
 <!-- /docturnal:tree -->

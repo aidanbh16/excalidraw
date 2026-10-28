@@ -38,6 +38,7 @@ type CanvasTranslate = {
   zoom: number;
 };
 
+// LassoTrail extends AnimatedTrail to handle lasso selection trails.
 export class LassoTrail extends AnimatedTrail {
   private intersectedElements: Set<ExcalidrawElement["id"]> = new Set();
   private enclosedElements: Set<ExcalidrawElement["id"]> = new Set();
@@ -46,6 +47,7 @@ export class LassoTrail extends AnimatedTrail {
   private canvasTranslate: CanvasTranslate | null = null;
   private keepPreviousSelection: boolean = false;
 
+  // Constructor initializes the LassoTrail with animation settings.
   constructor(app: App) {
     super(app, {
       animateTrail: true,
@@ -156,6 +158,7 @@ export class LassoTrail extends AnimatedTrail {
     this.updateSelection();
   };
 
+  // Updates the selection based on the current lasso path and canvas translate.
   private updateSelection = () => {
     const lassoPath = super
       .getCurrentTrail()
@@ -196,6 +199,7 @@ export class LassoTrail extends AnimatedTrail {
     }
   };
 
+  // Ends the lasso path and clears trails, resetting selection states.
   endPath(): void {
     super.endPath();
     super.clearTrails();

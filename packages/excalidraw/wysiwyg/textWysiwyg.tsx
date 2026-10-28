@@ -502,6 +502,7 @@ export const textWysiwyg = ({
         ),
         opacity: updatedTextElement.opacity / 100,
       });
+      // Updates the current text layout with the new position and dimensions.
       currentTextLayout = {
         angle: angle as Radians,
         font,
@@ -864,6 +865,8 @@ export const textWysiwyg = ({
   }
 
   editable.onkeydown = (event) => {
+    // The function `onkeydown` handles keyboard shortcuts
+    // for zooming in and out, and resetting the zoom level.
     if (!event.shiftKey && actionZoomIn.keyTest(event)) {
       event.preventDefault();
       app.actionManager.executeAction(actionZoomIn);
@@ -933,6 +936,7 @@ export const textWysiwyg = ({
       value = `${startValue}${TAB}${endValue}`;
     });
 
+    // Updates the editable text element's value.
     editable.value = value;
 
     editable.selectionStart = selectionStart + TAB_SIZE;
@@ -962,6 +966,7 @@ export const textWysiwyg = ({
 
     editable.value = value;
 
+    // If tabs were removed, adjust the selection start and end.
     if (removedTabs.length) {
       if (selectionStart > removedTabs[removedTabs.length - 1]) {
         editable.selectionStart = Math.max(

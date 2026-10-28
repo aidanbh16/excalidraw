@@ -14,6 +14,7 @@ export interface Language {
   rtl?: boolean;
 }
 
+// Defines the type for translation keys, which are nested keys of the fallback language data.
 export type TranslationKeys = NestedKeyOf<typeof fallbackLangData>;
 
 export const defaultLang = { code: "en", label: "English" };
@@ -74,6 +75,7 @@ export const languages: Language[] = [
     .sort((left, right) => (left.label > right.label ? 1 : -1)),
 ];
 
+// Defines a test language code for development purposes.
 const TEST_LANG_CODE = "__test__";
 if (isDevEnv()) {
   languages.unshift(
@@ -89,6 +91,7 @@ if (isDevEnv()) {
 let currentLang: Language = defaultLang;
 let currentLangData = {};
 
+// Sets the current language and updates the document's direction and language attributes.
 export const setLanguage = async (lang: Language) => {
   currentLang = lang;
   document.documentElement.dir = currentLang.rtl ? "rtl" : "ltr";

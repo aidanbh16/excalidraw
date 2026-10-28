@@ -452,6 +452,7 @@ const getGapSnaps = (
   nearestSnapsY: Snaps,
   minOffset: Vector2D,
 ) => {
+  // Checks if snapping is enabled based on the application state and event.
   if (!isSnappingEnabled({ app, event, selectedElements })) {
     return [];
   }
@@ -472,6 +473,7 @@ const getGapSnaps = (
     const centerX = (minX + maxX) / 2;
     const centerY = (minY + maxY) / 2;
 
+    // Iterates over the horizontal gaps to find snap points.
     for (const gap of horizontalGaps) {
       if (!rangesOverlap(rangeInclusive(minY, maxY), gap.overlap)) {
         continue;
@@ -495,6 +497,7 @@ const getGapSnaps = (
           offset: centerOffset,
         };
 
+        // Adds the center gap snap to the nearest snaps list.
         nearestSnapsX.push(snap);
         continue;
       }
@@ -541,6 +544,7 @@ const getGapSnaps = (
         continue;
       }
     }
+    // Iterates over the vertical gaps to find snap points.
     for (const gap of verticalGaps) {
       if (!rangesOverlap(rangeInclusive(minX, maxX), gap.overlap)) {
         continue;
@@ -662,6 +666,7 @@ const getPointSnaps = (
             nearestSnapsX.length = 0;
           }
 
+          // Creates a snap object for the point snap.
           nearestSnapsX.push({
             type: "point",
             points: [thisSnapPoint, otherSnapPoint],

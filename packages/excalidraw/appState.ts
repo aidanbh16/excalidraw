@@ -31,6 +31,7 @@ export const getDefaultAppState = (): Omit<
   AppState,
   "offsetTop" | "offsetLeft" | "width" | "height"
 > => {
+  // Initializes the default application state object with various properties.
   return {
     showWelcomeScreen: false,
     theme: THEME.LIGHT,
@@ -47,6 +48,7 @@ export const getDefaultAppState = (): Omit<
     currentItemStrokeColor: DEFAULT_ELEMENT_PROPS.strokeColor,
     currentItemStickynoteStrokeColor: DEFAULT_ELEMENT_PROPS.strokeColor,
     currentItemStickynoteBackgroundColor: DEFAULT_STICKY_NOTE_BG,
+    // Sets the default roundness for the current item based on whether it's in a test environment.
     currentItemRoundness: isTestEnv() ? "sharp" : "round",
     currentItemArrowType: ARROW_TYPE.round,
     currentItemStrokeStyle: DEFAULT_ELEMENT_PROPS.strokeStyle,
@@ -73,6 +75,7 @@ export const getDefaultAppState = (): Omit<
     penDetected: false,
     errorMessage: null,
     exportBackground: true,
+    // Sets the default export scale based on the device pixel ratio.
     exportScale: getDefaultExportScale(),
     exportEmbedScene: false,
     exportWithDarkMode: false,
@@ -100,6 +103,7 @@ export const getDefaultAppState = (): Omit<
     previousSelectedElementIds: {},
     resizingElement: null,
     scrolledOutside: false,
+    // Sets the default scroll X position to 0.
     scrollX: 0,
     scrollY: 0,
     scrollConstraints: null,
@@ -186,6 +190,7 @@ const APP_STATE_STORAGE_CONF = (<
     export: false,
     server: false,
   },
+  // Whether to keep the current item's opacity.
   currentItemOpacity: { browser: true, export: false, server: false },
   currentItemRoughness: { browser: true, export: false, server: false },
   currentItemStrokeVariability: {

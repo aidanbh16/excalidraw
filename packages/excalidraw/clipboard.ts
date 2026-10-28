@@ -42,6 +42,7 @@ type ElementsClipboard = {
   files: BinaryFiles | undefined;
 };
 
+// Defines the structure of mixed content pasted from the clipboard.
 export type PastedMixedContent = { type: "text" | "imageUrl"; value: string }[];
 
 export interface ClipboardData {
@@ -53,6 +54,7 @@ export interface ClipboardData {
   programmaticAPI?: boolean;
 }
 
+// Defines the allowed paste MIME types.
 type AllowedPasteMimeTypes = typeof ALLOWED_PASTE_MIME_TYPES[number];
 
 type ParsedClipboardEventTextData =

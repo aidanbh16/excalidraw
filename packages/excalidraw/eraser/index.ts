@@ -41,12 +41,14 @@ export class EraserTrail extends AnimatedTrail {
   private elementsToErase: Set<ExcalidrawElement["id"]> = new Set();
   private groupsToErase: Set<ExcalidrawElement["id"]> = new Set();
 
+  // Initializes the EraserTrail with the provided App instance.
   constructor(app: App) {
     super(app, {
       streamline: 0.2,
       size: 5,
       keepHead: true,
       sizeMapping: (c) => {
+        // Decay time for eraser trail.
         const DECAY_TIME = 200;
         const DECAY_LENGTH = 10;
         const t = Math.max(
@@ -58,6 +60,7 @@ export class EraserTrail extends AnimatedTrail {
             Math.min(DECAY_LENGTH, c.totalLength - c.currentIndex)) /
           DECAY_LENGTH;
 
+        // Applies easing functions to calculate the trail size.
         return Math.min(easeOut(l), easeOut(t));
       },
       fill: () =>
@@ -67,12 +70,14 @@ export class EraserTrail extends AnimatedTrail {
     });
   }
 
+  // Starts a new eraser path.
   startPath(x: number, y: number): void {
     this.endPath();
     super.startPath(x, y);
     this.elementsToErase.clear();
   }
 
+  // Adds a point to the eraser path and updates elements to be erased.
   addPointToPath(x: number, y: number, restore = false) {
     super.addPointToPath(x, y);
 
@@ -87,6 +92,7 @@ export class EraserTrail extends AnimatedTrail {
         .getCurrentTrail()
         ?.originalPoints?.map((p) => pointFrom<GlobalPoint>(p[0], p[1])) || [];
 
+    // Checks if the eraser path has fewer than two points.
     if (eraserPath.length < 2) {
       return [];
     }
@@ -114,6 +120,7 @@ export class EraserTrail extends AnimatedTrail {
           this.app.state.zoom.value,
         );
 
+        // Handles element intersection.
         if (intersects) {
           const shallowestGroupId = element.groupIds.at(-1)!;
 
@@ -128,6 +135,7 @@ export class EraserTrail extends AnimatedTrail {
             this.groupsToErase.delete(shallowestGroupId);
           }
 
+          // Handles container intersection.
           if (isBoundToContainer(element)) {
             this.elementsToErase.delete(element.containerId);
           }
@@ -150,6 +158,7 @@ export class EraserTrail extends AnimatedTrail {
           this.app.state.zoom.value,
         );
 
+        // Handles element intersection.
         if (intersects) {
           const shallowestGroupId = element.groupIds.at(-1)!;
 

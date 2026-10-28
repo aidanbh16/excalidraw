@@ -1,18 +1,41 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T21:29:12.097Z",
+  "updatedAt": "2026-10-28T22:12:47.326Z",
   "commentLevel": "medium",
   "ignoreHash": null,
   "docsComplete": true,
-  "batchesDone": 0,
+  "batchesDone": 1,
   "pending": {
-    "docs": true,
+    "docs": false,
     "changed": [],
-    "batch": null
+    "batch": {
+      "number": 1,
+      "layers": [
+        "Excalidraw"
+      ],
+      "files": [
+        "packages/excalidraw/types.ts",
+        "packages/excalidraw/index.tsx",
+        "packages/excalidraw/i18n.ts",
+        "packages/excalidraw/lasso/index.ts",
+        "packages/excalidraw/eraser/index.ts",
+        "packages/excalidraw/editor-jotai.ts",
+        "packages/excalidraw/appState.ts",
+        "packages/excalidraw/clipboard.ts",
+        "packages/excalidraw/context/ui-appState.ts",
+        "packages/excalidraw/wysiwyg/textWysiwyg.tsx",
+        "packages/excalidraw/shortcut.ts",
+        "packages/excalidraw/analytics.ts",
+        "packages/excalidraw/snapping.ts",
+        "packages/excalidraw/context/tunnels.ts",
+        "packages/excalidraw/viewport.ts"
+      ]
+    }
   },
   "files": {
     ".codesandbox/Dockerfile": {
-      "hash": "sha256-daae605aa8afee9d1060ea74e1a415d7c255b0402e42225f56b71cb67f012643"
+      "hash": "sha256-daae605aa8afee9d1060ea74e1a415d7c255b0402e42225f56b71cb67f012643",
+      "level": null
     },
     ".lintstagedrc.js": {
       "hash": "sha256-529f13f34b64f697ede3c60611ed3b4312eeb65bd97b1d451d03b40b5cde86d2",
@@ -21,7 +44,8 @@
       "level": null
     },
     "Dockerfile": {
-      "hash": "sha256-446e034f85b4383450d66da3cce14a0787bf37a9ba6db93c1630798bb79fdba4"
+      "hash": "sha256-446e034f85b4383450d66da3cce14a0787bf37a9ba6db93c1630798bb79fdba4",
+      "level": null
     },
     "dev-docs/babel.config.js": {
       "hash": "sha256-543f91b48879d760be7a7c722f9fa482e471d6c197418ce6f77d1c058e28914d",
@@ -38,7 +62,8 @@
       "level": null
     },
     "dev-docs/package.json": {
-      "hash": "sha256-0728961eda46db6293beacad386265cb9e6c4cee281a6501eb833737e5d138bd"
+      "hash": "sha256-0728961eda46db6293beacad386265cb9e6c4cee281a6501eb833737e5d138bd",
+      "level": null
     },
     "dev-docs/sidebars.js": {
       "hash": "sha256-3bc26bb43cb2e063c815c03844c81d160511bb1220cfad5fd0689b83e28a2aa8",
@@ -125,10 +150,12 @@
       "level": null
     },
     "dev-docs/tsconfig.json": {
-      "hash": "sha256-5030416ba51b7fb2c75929d858f7846ed910c6bcb33dac802b59bb45a8a7eb03"
+      "hash": "sha256-5030416ba51b7fb2c75929d858f7846ed910c6bcb33dac802b59bb45a8a7eb03",
+      "level": null
     },
     "docker-compose.yml": {
-      "hash": "sha256-37c6ebc4864005282fe068869b3dfeca7613deb4d539eca6c21764577cf7b9b9"
+      "hash": "sha256-37c6ebc4864005282fe068869b3dfeca7613deb4d539eca6c21764577cf7b9b9",
+      "level": null
     },
     "examples/with-nextjs/next.config.js": {
       "hash": "sha256-9e2516116ce70e858596c53a42965d6d9ac5ff6b84c42ffb1a89c7771ce71894",
@@ -137,7 +164,8 @@
       "level": null
     },
     "examples/with-nextjs/package.json": {
-      "hash": "sha256-2ddea861334b2a83b043d08c62e54731a64ce5fecda3014a62e31b404d123b6b"
+      "hash": "sha256-2ddea861334b2a83b043d08c62e54731a64ce5fecda3014a62e31b404d123b6b",
+      "level": null
     },
     "examples/with-nextjs/src/app/layout.tsx": {
       "hash": "sha256-81249a705e36334b8526c3b0d9dc77075d9afe928d96e490fd6d9e66400ba480",
@@ -179,10 +207,12 @@
       "level": null
     },
     "examples/with-nextjs/tsconfig.json": {
-      "hash": "sha256-0e29f5ec5e299caff15e74174930d69786231c2043cbdc869cea12924d704227"
+      "hash": "sha256-0e29f5ec5e299caff15e74174930d69786231c2043cbdc869cea12924d704227",
+      "level": null
     },
     "examples/with-script-in-browser/.codesandbox/Dockerfile": {
-      "hash": "sha256-a692dc8b567e425b510b6f86757f2056ee9d57daa2c08cbae6d96d6fb6904960"
+      "hash": "sha256-a692dc8b567e425b510b6f86757f2056ee9d57daa2c08cbae6d96d6fb6904960",
+      "level": null
     },
     "examples/with-script-in-browser/components/CustomFooter.tsx": {
       "hash": "sha256-d34496d2c75ae1e0a52c90e7f621f07dd9f8e962fa4531720f9ceda8804a1425",
@@ -246,10 +276,12 @@
       "level": null
     },
     "examples/with-script-in-browser/package.json": {
-      "hash": "sha256-9cbaeae6f9535f8a0c903e996a158db3046bd63fd179b63fbe7f61a1f7febab9"
+      "hash": "sha256-9cbaeae6f9535f8a0c903e996a158db3046bd63fd179b63fbe7f61a1f7febab9",
+      "level": null
     },
     "examples/with-script-in-browser/tsconfig.json": {
-      "hash": "sha256-e0716018c64dbbe9bf14d6c7533f4d3cd231cd0c9ce60b6dbb812b5e57a91b6a"
+      "hash": "sha256-e0716018c64dbbe9bf14d6c7533f4d3cd231cd0c9ce60b6dbb812b5e57a91b6a",
+      "level": null
     },
     "examples/with-script-in-browser/utils.ts": {
       "hash": "sha256-b1fdc21840048601f2faf0f9b67c39ce5fc53d99521bae49f90aa814dad89134",
@@ -657,7 +689,8 @@
       "level": null
     },
     "excalidraw-app/package.json": {
-      "hash": "sha256-8f205d668b7e09fb3c1878688d285c7ed51571434cd53caf27a556d2a5d4038b"
+      "hash": "sha256-8f205d668b7e09fb3c1878688d285c7ed51571434cd53caf27a556d2a5d4038b",
+      "level": null
     },
     "excalidraw-app/sentry.ts": {
       "hash": "sha256-ca87cb81069829dac3c10e3b392e57820aff27bda39d0f972374852446fcbd45",
@@ -746,7 +779,8 @@
       "level": null
     },
     "package.json": {
-      "hash": "sha256-7b7a3a1ac12b2a3d15ee280c02abce3fb4beafdd7156a05b4e9c5446aa66bb1c"
+      "hash": "sha256-7b7a3a1ac12b2a3d15ee280c02abce3fb4beafdd7156a05b4e9c5446aa66bb1c",
+      "level": null
     },
     "packages/common/debug.ts": {
       "hash": "sha256-cb57f6a6d3a62d7ec80090684e7c617df9996c890d05472e51209b2cad6c861e",
@@ -760,7 +794,8 @@
       "level": null
     },
     "packages/common/package.json": {
-      "hash": "sha256-927ef9262ddc55b68da2c44af1f38855cb301d8f9cad33d566fcb68538614210"
+      "hash": "sha256-927ef9262ddc55b68da2c44af1f38855cb301d8f9cad33d566fcb68538614210",
+      "level": null
     },
     "packages/common/src/appEventBus.test.ts": {
       "hash": "sha256-51c3685ff36526caa6bdedb184456b5f6342e9b3b732568b6f8772e7171bbf83",
@@ -1032,10 +1067,12 @@
       "level": null
     },
     "packages/common/tsconfig.json": {
-      "hash": "sha256-24fe9247d1ec1796d0ee32799016598aa3b949737708fd0e2e8c608f84464fb2"
+      "hash": "sha256-24fe9247d1ec1796d0ee32799016598aa3b949737708fd0e2e8c608f84464fb2",
+      "level": null
     },
     "packages/element/package.json": {
-      "hash": "sha256-2a311cd155062319578a31d106019301fbd2ed31c55950987a460d88bb513158"
+      "hash": "sha256-2a311cd155062319578a31d106019301fbd2ed31c55950987a460d88bb513158",
+      "level": null
     },
     "packages/element/src/Scene.ts": {
       "hash": "sha256-c9272616db31877872bb9f46af154adc51d6f54877627973a76303e3cd8f1f92",
@@ -2138,7 +2175,8 @@
       "level": null
     },
     "packages/element/tsconfig.json": {
-      "hash": "sha256-760096224d9ae809d0d3f0a605da31cf70b1c2cfd6ecc0ae9ea583375fe67d42"
+      "hash": "sha256-760096224d9ae809d0d3f0a605da31cf70b1c2cfd6ecc0ae9ea583375fe67d42",
+      "level": null
     },
     "packages/excalidraw/actions/actionAddToLibrary.ts": {
       "hash": "sha256-bf4037ebaca1c8bea96336f7d75a4c5eff519ed6458c85feefce2fe0f1d17e72",
@@ -2636,7 +2674,7 @@
       "symbols": [
         "trackEvent"
       ],
-      "level": null
+      "level": "medium"
     },
     "packages/excalidraw/animatedTrail.ts": {
       "hash": "sha256-975b69fc4f8d1bee63a55067469e0dd850583ad68e4bca31cbf0bed0a90cb920",
@@ -2649,7 +2687,7 @@
       "level": null
     },
     "packages/excalidraw/appState.ts": {
-      "hash": "sha256-2abf28965eea39ce889d8338ee4a9eae9c349b9c725b07094e7e56422cd3d4a6",
+      "hash": "sha256-a975a2dca16366c7f38704828adc54322f51dc6d9d3aa2234330a8b2dba857c8",
       "summary": "Manages the application state",
       "symbols": [
         "getDefaultAppState",
@@ -2662,7 +2700,29 @@
         "getDefaultExportScale",
         "_clearAppStateForStorage"
       ],
-      "level": null
+      "level": "medium",
+      "comments": [
+        {
+          "text": "// Returns a default state object for Excalidraw, omitting\n// properties that are not relevant for the initial setup.",
+          "anchor": "ca8806aa33f282fc"
+        },
+        {
+          "text": "// Clears the app state for storage, filtering keys based on export type.",
+          "anchor": "0f3b7a3721c912ac"
+        },
+        {
+          "text": "// Exports a function to clean the AppState for export, using a helper function to clear storage.",
+          "anchor": "7daeaf0ce316703c"
+        },
+        {
+          "text": "// Exports a function to check if the Eraser tool is active based on the activeTool property.",
+          "anchor": "fcc933760973d3f5"
+        },
+        {
+          "text": "// Exports a function to check if the Hand tool is active based on the activeTool property.",
+          "anchor": "09374cd0f12329a9"
+        }
+      ]
     },
     "packages/excalidraw/charts.test.ts": {
       "hash": "sha256-4d3084d44e6848fc0232fc28c30240f39711e7978243d6cc46eba2a0dec6055f",
@@ -2788,7 +2848,7 @@
       "level": null
     },
     "packages/excalidraw/clipboard.ts": {
-      "hash": "sha256-801629c0583f67d75dbc85b3a92c0edc6885a1e24b5d0506c2633008d5211fe8",
+      "hash": "sha256-0eb32825dd133d5d1be9ecdd8eac66e3e9154f87c84e2255ef7e4db2f7c52e76",
       "summary": "Manages clipboard data",
       "symbols": [
         "PastedMixedContent",
@@ -2804,7 +2864,13 @@
         "ParsedDataTranferList",
         "parseDataTransferEventMimeTypes"
       ],
-      "level": null
+      "level": null,
+      "comments": [
+        {
+          "text": "// Copies a Blob to the clipboard as a PNG image. Handles\n// Safari's synchronous ClipboardItem requirement.",
+          "anchor": "104109785354114c"
+        }
+      ]
     },
     "packages/excalidraw/components/Actions.scss": {
       "hash": "sha256-19b0907a98d6a47744da2d53116f3cf71bbb25f5f0dd836f13303b47ebc086e9",
@@ -5520,7 +5586,7 @@
         "useTunnels",
         "useInitializeTunnels"
       ],
-      "level": null
+      "level": "medium"
     },
     "packages/excalidraw/context/ui-appState.ts": {
       "hash": "sha256-90e846534e2a6bf24e9ca8e7e31b5e5dfef4b8ee80910141c1831f0f3dcdf1f5",
@@ -5529,7 +5595,7 @@
         "UIAppStateContext",
         "useUIAppState"
       ],
-      "level": null
+      "level": "medium"
     },
     "packages/excalidraw/css/app.scss": {
       "hash": "sha256-da029419042cec0c00af7648dacd6d234fe200eed47e886c676ad415a7178536",
@@ -5771,7 +5837,7 @@
         "EditorJotaiProvider",
         "editorJotaiStore"
       ],
-      "level": null
+      "level": "medium"
     },
     "packages/excalidraw/env.cjs": {
       "hash": "sha256-d0f7db5ad70de7cea60b09880f815b4d0eb0af927eabb4c38f4fb76252affac8",
@@ -6058,7 +6124,7 @@
         "useI18n",
         "findPartsForData"
       ],
-      "level": null
+      "level": "medium"
     },
     "packages/excalidraw/index-node.ts": {
       "hash": "sha256-e6d7d1fc3434a50bd1b88bb0bd1a33753df56cf4b5002d6447294bb3e77d1085",
@@ -6067,7 +6133,7 @@
       "level": null
     },
     "packages/excalidraw/index.tsx": {
-      "hash": "sha256-8a3218f932b2aa396b0bc3616bf43ade4eabfac8a3ee231788fa7673daf69132",
+      "hash": "sha256-344d673b2547a09b5fb9b54e83d4fdcc1c92ed150a04dba2089c9272dffbd84c",
       "summary": "Exports Excalidraw API provider and Excalidraw component.",
       "symbols": [
         "ExcalidrawAPIProvider",
@@ -6083,7 +6149,13 @@
         "languages",
         "restoreAppState"
       ],
-      "level": null
+      "level": "medium",
+      "comments": [
+        {
+          "text": "// A React component that renders the Excalidraw drawing area, handling various props and callbacks.",
+          "anchor": "8e4d8c7dcc6c3d03"
+        }
+      ]
     },
     "packages/excalidraw/laserTrails.ts": {
       "hash": "sha256-94c9c207dca0c7e18d65cb252ab0367d18fcd01cff8a4cc849ad48d55a75f27b",
@@ -6094,12 +6166,26 @@
       "level": null
     },
     "packages/excalidraw/lasso/index.ts": {
-      "hash": "sha256-1b3b675c2a499cbb701992153ebd122251c592206a4837cda101473bc9b53cc0",
+      "hash": "sha256-5332f32a915b3a9be5c0d37ec49074b97b1ff8a1029b4acb9297ed693f7b58b3",
       "summary": "Exports the LassoTrail class and uses the utils module.",
       "symbols": [
         "LassoTrail"
       ],
-      "level": null
+      "level": null,
+      "comments": [
+        {
+          "text": "// A class that manages the lasso selection trail, tracking\n// intersected and enclosed elements, and applying a custom animation.",
+          "anchor": "e898497369c9a047"
+        },
+        {
+          "text": "// Initializes a LassoTrail with animation, streamline, and size mapping based on pressure decay.",
+          "anchor": "8bdcdfec66bc8e76"
+        },
+        {
+          "text": "// Selects elements from given IDs, updating the selection state.",
+          "anchor": "f820af8804d9a2de"
+        }
+      ]
     },
     "packages/excalidraw/lasso/utils.ts": {
       "hash": "sha256-7b9963f910d9b42b670d7a696050656672b9539f79807d124b09f2f6a3a4c730",
@@ -6133,7 +6219,8 @@
       "level": null
     },
     "packages/excalidraw/package.json": {
-      "hash": "sha256-c8f9ca6533ad696ff12ffcd235572bb7ddc2db5dc936044188923ca87f458c97"
+      "hash": "sha256-c8f9ca6533ad696ff12ffcd235572bb7ddc2db5dc936044188923ca87f458c97",
+      "level": null
     },
     "packages/excalidraw/polyfill.ts": {
       "hash": "sha256-d0d3e659be0712b2f1569fe2e98cb24d7f11e0d1f979072bf0979bc0e00af3ba",
@@ -6363,12 +6450,18 @@
       "level": null
     },
     "packages/excalidraw/shortcut.ts": {
-      "hash": "sha256-f389a4966180316aec9f716951659de01a2338f15d6b54401b6a4f4c6286f282",
+      "hash": "sha256-037e922e80f5af453bbc94afc323c16600738942987d379956e203676f420102",
       "summary": "Handles keyboard shortcuts for Excalidraw.",
       "symbols": [
         "getShortcutKey"
       ],
-      "level": null
+      "level": "medium",
+      "comments": [
+        {
+          "text": "// Returns the translated shortcut key for the given input, replacing\n// platform-specific keys with their localized equivalents.",
+          "anchor": "51488a55abbee434"
+        }
+      ]
     },
     "packages/excalidraw/snapping.ts": {
       "hash": "sha256-07dc8aeeacb322d99249ec52286d0753f8baf99a1d814dc24d2f1469d7f38362",
@@ -7140,7 +7233,8 @@
       "level": null
     },
     "packages/excalidraw/tsconfig.json": {
-      "hash": "sha256-12d033a132dfd080ed66071173fd3440b2bad5c181c658f6d8ca0e8d739eabd9"
+      "hash": "sha256-12d033a132dfd080ed66071173fd3440b2bad5c181c658f6d8ca0e8d739eabd9",
+      "level": null
     },
     "packages/excalidraw/types.ts": {
       "hash": "sha256-da1df501290dab5f4a8c0d1b4729090f71dd6f7492b5742e8cc28c18e60f366d",
@@ -7159,7 +7253,7 @@
         "ActiveTool",
         "SidebarName"
       ],
-      "level": null
+      "level": "medium"
     },
     "packages/excalidraw/viewport.ts": {
       "hash": "sha256-7fc95483ae81961873df516cb1e6dc936074b6e193a211e302acbb8743bcad0e",
@@ -7178,7 +7272,7 @@
         "getScrollToContentState",
         "constrainScrollAxis"
       ],
-      "level": null
+      "level": "medium"
     },
     "packages/excalidraw/workers.ts": {
       "hash": "sha256-962327a34e6b302af76cedabcd4d98335d29b2e13634752cb567d6bb1ef1cf18",
@@ -7213,7 +7307,8 @@
       "level": null
     },
     "packages/fractional-indexing/package.json": {
-      "hash": "sha256-fff89961b159b97ce973f9597b6cf994f54b9968ad8b0d294a0da6695b83f78e"
+      "hash": "sha256-fff89961b159b97ce973f9597b6cf994f54b9968ad8b0d294a0da6695b83f78e",
+      "level": null
     },
     "packages/fractional-indexing/src/index.ts": {
       "hash": "sha256-d739d048a84ae1d5f6a3021b84496ebd029aec647809ae8b52e6ec66b5df715a",
@@ -7233,10 +7328,12 @@
       "level": null
     },
     "packages/fractional-indexing/tsconfig.json": {
-      "hash": "sha256-24fe9247d1ec1796d0ee32799016598aa3b949737708fd0e2e8c608f84464fb2"
+      "hash": "sha256-24fe9247d1ec1796d0ee32799016598aa3b949737708fd0e2e8c608f84464fb2",
+      "level": null
     },
     "packages/laser-pointer/package.json": {
-      "hash": "sha256-c695536e3d9927dff724e6e96a8c61834e63cfc89c7fb35199d924118cfe21eb"
+      "hash": "sha256-c695536e3d9927dff724e6e96a8c61834e63cfc89c7fb35199d924118cfe21eb",
+      "level": null
     },
     "packages/laser-pointer/src/index.ts": {
       "hash": "sha256-20f6cc8476985397286f9625dadfffa7ad2bff9c6f30c4d8e96e47e7aacd1684",
@@ -7284,10 +7381,12 @@
       "level": null
     },
     "packages/laser-pointer/tsconfig.json": {
-      "hash": "sha256-24fe9247d1ec1796d0ee32799016598aa3b949737708fd0e2e8c608f84464fb2"
+      "hash": "sha256-24fe9247d1ec1796d0ee32799016598aa3b949737708fd0e2e8c608f84464fb2",
+      "level": null
     },
     "packages/math/package.json": {
-      "hash": "sha256-284217291672975d9da9c0e47d1a3c9f7ff5a61ee6eac0872056a34fb21f8c19"
+      "hash": "sha256-284217291672975d9da9c0e47d1a3c9f7ff5a61ee6eac0872056a34fb21f8c19",
+      "level": null
     },
     "packages/math/src/angle.ts": {
       "hash": "sha256-fad5a8e86381be41aae536fadf548ab3fac993a23de6908170d03dc7c0a52bc9",
@@ -7570,13 +7669,16 @@
       "level": null
     },
     "packages/math/tsconfig.json": {
-      "hash": "sha256-760096224d9ae809d0d3f0a605da31cf70b1c2cfd6ecc0ae9ea583375fe67d42"
+      "hash": "sha256-760096224d9ae809d0d3f0a605da31cf70b1c2cfd6ecc0ae9ea583375fe67d42",
+      "level": null
     },
     "packages/tsconfig.base.json": {
-      "hash": "sha256-130c2188401900193eab4b2e77823502f05272dabc81c46e1e387a82d43fe162"
+      "hash": "sha256-130c2188401900193eab4b2e77823502f05272dabc81c46e1e387a82d43fe162",
+      "level": null
     },
     "packages/utils/package.json": {
-      "hash": "sha256-5008868bbcd956c112e9e62c40bf4d653a9be93f56dd1ee4cdd9e303e9388c44"
+      "hash": "sha256-5008868bbcd956c112e9e62c40bf4d653a9be93f56dd1ee4cdd9e303e9388c44",
+      "level": null
     },
     "packages/utils/src/index.ts": {
       "hash": "sha256-45311ff921d6b8d0ae311b0adfdf2dd142dd5b3444c1566beed29d5ceab98e24",
@@ -7638,7 +7740,8 @@
       "level": null
     },
     "packages/utils/tsconfig.json": {
-      "hash": "sha256-760096224d9ae809d0d3f0a605da31cf70b1c2cfd6ecc0ae9ea583375fe67d42"
+      "hash": "sha256-760096224d9ae809d0d3f0a605da31cf70b1c2cfd6ecc0ae9ea583375fe67d42",
+      "level": null
     },
     "public/service-worker.js": {
       "hash": "sha256-6b7ade18de7f438e4a901d5e65b8adcaf89cf1d41d7ced3fd6cc6ebbb9d11319",
@@ -7777,7 +7880,8 @@
       "level": null
     },
     "tsconfig.json": {
-      "hash": "sha256-f80d226b52cc14f9b7975c0fc471f0be3b0ece95da96a2daddd0bb62a05d79cf"
+      "hash": "sha256-f80d226b52cc14f9b7975c0fc471f0be3b0ece95da96a2daddd0bb62a05d79cf",
+      "level": null
     },
     "vitest.config.mts": {
       "hash": "sha256-be32b1c9e8dcf0233985b38ee9a6d4d3dae9f9f31bda80db766d63f08d088a30",

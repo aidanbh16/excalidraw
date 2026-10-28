@@ -27,6 +27,8 @@ const getDefaultExportScale = () => {
   return EXPORT_SCALES.includes(devicePixelRatio) ? devicePixelRatio : 1;
 };
 
+// Returns a default state object for Excalidraw, omitting
+// properties that are not relevant for the initial setup.
 export const getDefaultAppState = (): Omit<
   AppState,
   "offsetTop" | "offsetLeft" | "width" | "height"
@@ -296,6 +298,7 @@ const APP_STATE_STORAGE_CONF = (<
   fontTopPicks: { browser: true, export: false, server: false },
 });
 
+// Clears the app state for storage, filtering keys based on export type.
 const _clearAppStateForStorage = <
   ExportType extends "export" | "browser" | "server",
 >(
@@ -324,6 +327,7 @@ export const clearAppStateForLocalStorage = (appState: Partial<AppState>) => {
   return _clearAppStateForStorage(appState, "browser");
 };
 
+// Exports a function to clean the AppState for export, using a helper function to clear storage.
 export const cleanAppStateForExport = (appState: Partial<AppState>) => {
   return _clearAppStateForStorage(appState, "export");
 };
@@ -332,12 +336,14 @@ export const clearAppStateForDatabase = (appState: Partial<AppState>) => {
   return _clearAppStateForStorage(appState, "server");
 };
 
+// Exports a function to check if the Eraser tool is active based on the activeTool property.
 export const isEraserActive = ({
   activeTool,
 }: {
   activeTool: AppState["activeTool"];
 }) => activeTool.type === "eraser";
 
+// Exports a function to check if the Hand tool is active based on the activeTool property.
 export const isHandToolActive = ({
   activeTool,
 }: {

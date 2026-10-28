@@ -554,6 +554,8 @@ export const parseClipboard = async (
   return { text: parsedEventData.value };
 };
 
+// Copies a Blob to the clipboard as a PNG image. Handles
+// Safari's synchronous ClipboardItem requirement.
 export const copyBlobToClipboardAsPng = async (blob: Blob | Promise<Blob>) => {
   try {
     // in Safari so far we need to construct the ClipboardItem synchronously

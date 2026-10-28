@@ -64,6 +64,7 @@ export const ExcalidrawAPIProvider = ({
   );
 };
 
+// A React component that renders the Excalidraw drawing area, handling various props and callbacks.
 const ExcalidrawBase = (props: ExcalidrawProps) => {
   const {
     onExport,

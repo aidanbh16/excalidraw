@@ -45,6 +45,7 @@ type ZoomOptions = {
   nextZoom: NormalizedZoomValue;
 };
 
+// Describes animation options with an optional duration in milliseconds.
 export type AnimationOptions = {
   duration?: number;
 };
@@ -56,6 +57,7 @@ export type SetViewportRect = {
   height?: number;
 };
 
+// Defines options for setting the viewport, including target content and zooming behavior.
 export type SetViewportOptions = {
   /**
    * what to show in the viewport: an explicit scene-coordinate box/rect,
@@ -278,6 +280,8 @@ const zoomValueToFitBoundsOnViewport = (
   return Math.min(smallestZoomValue, 1);
 };
 
+// Returns the zoom level to fit the given bounds within the canvas, with options
+// for scaling down, minimum and maximum zoom levels, and stepped zooming.
 export const zoomToFitBounds = ({
   bounds,
   appState,
@@ -367,6 +371,7 @@ const doBoundsExceedViewport = (appState: AppState, bounds: Bounds) => {
   );
 };
 
+// Returns the bounds of the element closest to the given point.
 export const getClosestElementBounds = (
   elements: readonly ExcalidrawElement[],
   from: { x: number; y: number },
@@ -394,6 +399,7 @@ export const getClosestElementBounds = (
   return getElementBounds(closestElement, elementsMap);
 };
 
+// Returns the scroll position to center the scene point on the viewport.
 export const centerScrollOn = ({
   scenePoint,
   viewportDimensions,
@@ -480,6 +486,7 @@ export const scrollBoundsIntoView = ({
   };
 };
 
+// Returns the scroll state to center the content of the elements within the viewport.
 export const getScrollToContentState = (
   elements: readonly ExcalidrawElement[],
   appState: AppState,

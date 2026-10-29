@@ -38,6 +38,7 @@ type CanvasTranslate = {
   zoom: number;
 };
 
+// Tracks the lasso selection trail, including intersected and enclosed elements.
 export class LassoTrail extends AnimatedTrail {
   private intersectedElements: Set<ExcalidrawElement["id"]> = new Set();
   private enclosedElements: Set<ExcalidrawElement["id"]> = new Set();
@@ -46,6 +47,7 @@ export class LassoTrail extends AnimatedTrail {
   private canvasTranslate: CanvasTranslate | null = null;
   private keepPreviousSelection: boolean = false;
 
+  // Initializes a LassoTrail with an App instance, setting animation, streamline, and size mapping.
   constructor(app: App) {
     super(app, {
       animateTrail: true,
@@ -89,6 +91,7 @@ export class LassoTrail extends AnimatedTrail {
     }
   }
 
+  // Copies selected elements from their IDs into the current selection state.
   selectElementsFromIds = (ids: string[]) => {
     this.app.setState((prevState) => {
       const nextSelectedElementIds = ids.reduce((acc, id) => {

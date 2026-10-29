@@ -56,6 +56,7 @@ type Vector2D = {
 
 type PointPair = [GlobalPoint, GlobalPoint];
 
+// Describes a point snap with a type, points, and offset.
 export type PointSnap = {
   type: "point";
   points: PointPair;
@@ -93,11 +94,13 @@ export type GapSnap = {
   offset: number;
 };
 
+// An array of gap snaps.
 export type GapSnaps = GapSnap[];
 
 export type Snap = GapSnap | PointSnap;
 export type Snaps = Snap[];
 
+// Represents a line of points for snapping.
 export type PointSnapLine = {
   type: "points";
   points: GlobalPoint[];

@@ -64,6 +64,7 @@ export const ExcalidrawAPIProvider = ({
   );
 };
 
+// Renders the main interface of Excalidraw, handling various props and callbacks.
 const ExcalidrawBase = (props: ExcalidrawProps) => {
   const {
     onExport,

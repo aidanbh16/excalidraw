@@ -37,6 +37,7 @@ import { AnimatedTrail } from "../animatedTrail";
 
 import type App from "../components/App";
 
+// Manages the eraser trail, tracking elements and groups to erase.
 export class EraserTrail extends AnimatedTrail {
   private elementsToErase: Set<ExcalidrawElement["id"]> = new Set();
   private groupsToErase: Set<ExcalidrawElement["id"]> = new Set();
@@ -67,12 +68,15 @@ export class EraserTrail extends AnimatedTrail {
     });
   }
 
+  // Starts a new eraser trail by ending the current
+  // one and clearing elements and groups to be erased.
   startPath(x: number, y: number): void {
     this.endPath();
     super.startPath(x, y);
     this.elementsToErase.clear();
   }
 
+  // Adds a point to the eraser trail and updates elements to be erased.
   addPointToPath(x: number, y: number, restore = false) {
     super.addPointToPath(x, y);
 
@@ -81,6 +85,7 @@ export class EraserTrail extends AnimatedTrail {
     return elementsToEraser;
   }
 
+  // Updates the elements to be erased based on the current trail and restoreToErase flag.
   private updateElementsToBeErased(restoreToErase?: boolean) {
     const eraserPath: GlobalPoint[] =
       super
@@ -185,6 +190,7 @@ export class EraserTrail extends AnimatedTrail {
     return Array.from(this.elementsToErase);
   }
 
+  // Ends the eraser trail and clears trails, elements, and groups to be erased.
   endPath(): void {
     super.endPath();
     super.clearTrails();

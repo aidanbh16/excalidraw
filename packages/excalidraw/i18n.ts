@@ -8,12 +8,14 @@ import percentages from "./locales/percentages.json";
 
 const COMPLETION_THRESHOLD = 85;
 
+// Describes a language with a code, label, and optional right-to-left directionality.
 export interface Language {
   code: string;
   label: string;
   rtl?: boolean;
 }
 
+// Defines a type for translation keys based on the fallback language data.
 export type TranslationKeys = NestedKeyOf<typeof fallbackLangData>;
 
 export const defaultLang = { code: "en", label: "English" };
@@ -89,6 +91,7 @@ if (isDevEnv()) {
 let currentLang: Language = defaultLang;
 let currentLangData = {};
 
+// Sets the language and updates the document's direction and language attributes.
 export const setLanguage = async (lang: Language) => {
   currentLang = lang;
   document.documentElement.dir = currentLang.rtl ? "rtl" : "ltr";

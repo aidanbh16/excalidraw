@@ -2,6 +2,7 @@ import { isDarwin } from "@excalidraw/common";
 
 import { t } from "./i18n";
 
+// Returns the translated shortcut key based on the platform.
 export const getShortcutKey = (shortcut: string): string =>
   shortcut
     .replace(

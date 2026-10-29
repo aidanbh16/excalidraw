@@ -27,6 +27,7 @@ const getDefaultExportScale = () => {
   return EXPORT_SCALES.includes(devicePixelRatio) ? devicePixelRatio : 1;
 };
 
+// Returns default application state with some properties omitted.
 export const getDefaultAppState = (): Omit<
   AppState,
   "offsetTop" | "offsetLeft" | "width" | "height"
@@ -296,6 +297,7 @@ const APP_STATE_STORAGE_CONF = (<
   fontTopPicks: { browser: true, export: false, server: false },
 });
 
+// Clears the app state for storage, filtering keys based on export type.
 const _clearAppStateForStorage = <
   ExportType extends "export" | "browser" | "server",
 >(
@@ -324,6 +326,7 @@ export const clearAppStateForLocalStorage = (appState: Partial<AppState>) => {
   return _clearAppStateForStorage(appState, "browser");
 };
 
+// Returns a cleaned version of the app state for export, using a helper function.
 export const cleanAppStateForExport = (appState: Partial<AppState>) => {
   return _clearAppStateForStorage(appState, "export");
 };
@@ -332,12 +335,14 @@ export const clearAppStateForDatabase = (appState: Partial<AppState>) => {
   return _clearAppStateForStorage(appState, "server");
 };
 
+// Checks if the eraser tool is active based on the active tool type.
 export const isEraserActive = ({
   activeTool,
 }: {
   activeTool: AppState["activeTool"];
 }) => activeTool.type === "eraser";
 
+// Checks if the hand tool is active based on the active tool type.
 export const isHandToolActive = ({
   activeTool,
 }: {

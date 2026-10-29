@@ -42,6 +42,7 @@ type ElementsClipboard = {
   files: BinaryFiles | undefined;
 };
 
+// Describes the structure of pasted mixed content, containing text or image URLs.
 export type PastedMixedContent = { type: "text" | "imageUrl"; value: string }[];
 
 export interface ClipboardData {
@@ -385,11 +386,13 @@ type ParsedDataTransferItemType<
   T extends AllowedParsedDataTransferItem["type"],
 > = AllowedParsedDataTransferItem & { type: T };
 
+// Represents a parsed file from a data transfer item, extracting only file types.
 export type ParsedDataTransferFile = Extract<
   AllowedParsedDataTransferItem,
   { kind: "file" }
 >;
 
+// Defines a list of parsed data transfer items, with methods to filter and retrieve data and files.
 export type ParsedDataTranferList = ParsedDataTransferItem[] & {
   /**
    * Only allows filtering by known `string` data types, since `file`
@@ -464,6 +467,7 @@ export const parseDataTransferEventMimeTypes = (
   return types;
 };
 
+// Parses a clipboard event or drag event to extract data items, handling files and strings.
 export const parseDataTransferEvent = async (
   event: ClipboardEvent | DragEvent | React.DragEvent<HTMLDivElement>,
 ): Promise<ParsedDataTranferList> => {
@@ -554,6 +558,7 @@ export const parseClipboard = async (
   return { text: parsedEventData.value };
 };
 
+// Copies a Blob to the clipboard as a PNG image.
 export const copyBlobToClipboardAsPng = async (blob: Blob | Promise<Blob>) => {
   try {
     // in Safari so far we need to construct the ClipboardItem synchronously
@@ -584,6 +589,7 @@ export const copyBlobToClipboardAsPng = async (blob: Blob | Promise<Blob>) => {
   }
 };
 
+// Copies text to the system clipboard, handling various MIME types and clipboard events.
 export const copyTextToSystemClipboard = async <
   MimeType extends ValueOf<typeof STRING_MIME_TYPES>,
 >(

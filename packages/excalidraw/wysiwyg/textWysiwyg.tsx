@@ -200,6 +200,7 @@ const measureNativeLineCaretPositions = ({
   }
 };
 
+// Returns the caret offset from native layout based on targetX and layout
 const getLineCaretOffsetFromNativeLayout = ({
   targetX,
   ...layout
@@ -247,6 +248,8 @@ const getLineCaretXFromNativeLayout = ({
 
 type SubmitHandler = () => void;
 
+// Handles text editing in the WYSIWYG editor, accepting
+// various parameters and returning a submit handler.
 export const textWysiwyg = ({
   onChange,
   onSubmit,

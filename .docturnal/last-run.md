@@ -1,58 +1,34 @@
-# Docturnal: documentation
+# Docturnal: comments and documentation
 
 ## Progress
 
 - **Documentation:** complete, with 38 layer documents and the README.
-- **Comments:** 0 of 788 files commented at the medium level.
-- **This pull request:** documentation for the whole project.
-- **Next:** comments on existing code in batches of up to 15 files, starting with batch 1 and the most important files. 788 existing files are left.
+- **Comments:** 10 of 788 files commented at the medium level.
+- **This pull request:** batch 1 of existing code, 15 files in the Excalidraw layer.
+- **Next:** batch 2 of existing code, after you merge or close this pull request. 773 existing files are left.
+- **Time limit:** 90 minutes a night.
 
-The latest run updates 38 docs and updates the README. Review the changes, then merge the pull request to keep them.
+The latest run adds 38 comments to 12 files. Review the changes, then merge the pull request to keep them.
 
-## Docs
+## Comments added
 
-- Updated `docs/top-level.md`
-- Updated `docs/docs.md`
-- Updated `docs/with-nextjs.md`
-- Updated `docs/with-script-in-browser.md`
-- Updated `docs/excalidraw-app.md`
-- Updated `docs/packages.md`
-- Updated `docs/public.md`
-- Updated `docs/scripts.md`
-- Updated `docs/packages/excalidraw.md`
-- Updated `docs/packages/excalidraw/components-colorpickerutils.md`
-- Updated `docs/packages/excalidraw-element.md`
-- Updated `docs/packages/excalidraw/components-dialog.md`
-- Updated `docs/packages/excalidraw/components-icons.md`
-- Updated `docs/packages/excalidraw/components-app-selection.md`
-- Updated `docs/packages/excalidraw-element/excalidraw-element-types.md`
-- Updated `docs/packages/excalidraw-common.md`
-- Updated `docs/packages/excalidraw-math.md`
-- Updated `docs/packages/excalidraw-element/excalidraw-element-bounds.md`
-- Updated `docs/packages/excalidraw/actions-register.md`
-- Updated `docs/packages/excalidraw/actions-actionaddtolibrary.md`
-- Updated `docs/packages/excalidraw/data.md`
-- Updated `docs/packages/excalidraw/fonts.md`
-- Updated `docs/packages/excalidraw/hooks.md`
-- Updated `docs/excalidraw-app/components.md`
-- Updated `docs/excalidraw-app/data.md`
-- Updated `docs/packages/excalidraw/charts.md`
-- Updated `docs/packages/excalidraw/renderer.md`
-- Updated `docs/packages/excalidraw/subset.md`
-- Updated `docs/packages/excalidraw-utilities.md`
-- Updated `docs/packages/excalidraw/scene.md`
-- Updated `docs/packages/excalidraw-laser-pointer.md`
-- Updated `docs/packages/excalidraw-fractional-indexing.md`
-- Updated `docs/excalidraw-app/tests.md`
-- Updated `docs/packages/excalidraw-common/tests.md`
-- Updated `docs/packages/excalidraw-element/tests.md`
-- Updated `docs/packages/excalidraw/tests.md`
-- Updated `docs/packages/excalidraw-math/tests.md`
-- Updated `docs/packages/excalidraw-utilities/tests.md`
-
-## README
-
-- Updated: "Architecture", "Quick start", "Project structure"
+| File | Comments added | Checked by a parser | Proposed comments |
+| --- | --- | --- | --- |
+| `packages/excalidraw/types.ts` | 0 | Yes (TypeScript) | proposed 0, 0 added |
+| `packages/excalidraw/index.tsx` | 1 | Yes (TypeScript) | proposed 1, 1 added |
+| `packages/excalidraw/i18n.ts` | 3 | Yes (TypeScript) | proposed 4, 1 restates the code, 3 added |
+| `packages/excalidraw/lasso/index.ts` | 3 | Yes (TypeScript) | proposed 3, 3 added |
+| `packages/excalidraw/eraser/index.ts` | 5 | Yes (TypeScript) | proposed 5, 5 added |
+| `packages/excalidraw/editor-jotai.ts` | 0 | Yes (TypeScript) | proposed 0, 0 added |
+| `packages/excalidraw/appState.ts` | 5 | Yes (TypeScript) | proposed 5, 5 added |
+| `packages/excalidraw/clipboard.ts` | 6 | Yes (TypeScript) | proposed 7, 1 inaccurate, 6 added |
+| `packages/excalidraw/context/ui-appState.ts` | 1 | Yes (TypeScript) | proposed 1, 1 added |
+| `packages/excalidraw/wysiwyg/textWysiwyg.tsx` | 2 | Yes (TypeScript) | proposed 2, 2 added |
+| `packages/excalidraw/shortcut.ts` | 1 | Yes (TypeScript) | proposed 1, 1 added |
+| `packages/excalidraw/analytics.ts` | 0 | Yes (TypeScript) | proposed 0, 0 added |
+| `packages/excalidraw/snapping.ts` | 3 | Yes (TypeScript) | proposed 5, 2 inaccurate, 3 added |
+| `packages/excalidraw/context/tunnels.ts` | 2 | Yes (TypeScript) | proposed 2, 2 added |
+| `packages/excalidraw/viewport.ts` | 6 | Yes (TypeScript) | proposed 6, 6 added |
 
 ## Models
 

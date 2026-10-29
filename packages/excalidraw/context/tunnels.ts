@@ -2,6 +2,7 @@ import { createIsolation } from "jotai-scope";
 import React from "react";
 import tunnel from "tunnel-rat";
 
+// Describes the type of a tunnel object.
 export type Tunnel = ReturnType<typeof tunnel>;
 
 type TunnelsContextValue = {
@@ -22,6 +23,7 @@ type TunnelsContextValue = {
 
 export const TunnelsContext = React.createContext<TunnelsContextValue>(null!);
 
+// Returns a React context for managing tunnels.
 export const useTunnels = () => React.useContext(TunnelsContext);
 
 const tunnelsJotai = createIsolation();
